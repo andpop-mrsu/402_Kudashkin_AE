@@ -1,21 +1,22 @@
 <?php
-	namespace AlekseyKudashkin\hangman\View;
 
-	function viewGame($faultCount, $progress){		//псведографика
-		$graphic = array (
-		    " +---+\n     |\n     |\n     |\n    ===\n ",
-		    " +---+\n 0   |\n     |\n     |\n    ===\n ",
-		    " +---+\n 0   |\n |   |\n     |\n    ===\n ",
-		    " +---+\n 0   |\n/|   |\n     |\n    ===\n ",
-		    " +---+\n 0   |\n/|\  |\n     |\n    ===\n ",
-		    " +---+\n 0   |\n/|\  |\n/    |\n    ===\n ",
-		    " +---+\n 0   |\n/|\  |\n/ \  |\n    ===\n "
-		);
+    namespace AlekseyKudashkin\hangman\View;
 
-		echo $graphic[$faultCount];
+function viewGame($faultCount, $progress)
+{
+      //псведографика
+    $graphic = array (
+        " +---+\n     |\n     |\n     |\n    ===\n ",
+        " +---+\n 0   |\n     |\n     |\n    ===\n ",
+        " +---+\n 0   |\n |   |\n     |\n    ===\n ",
+        " +---+\n 0   |\n/|   |\n     |\n    ===\n ",
+        " +---+\n 0   |\n/|\  |\n     |\n    ===\n ",
+        " +---+\n 0   |\n/|\  |\n/    |\n    ===\n ",
+        " +---+\n 0   |\n/|\  |\n/ \  |\n    ===\n "
+    );
 
-		for($i = 0; $i < strlen($progress); $i++)
-			echo $progress[$i];
+    \cli\line($graphic[$faultCount]);
+    \cli\line($progress);
 
-		echo "\n";
-	}
+    echo "\n";
+}
