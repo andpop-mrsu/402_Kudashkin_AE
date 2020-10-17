@@ -12,8 +12,8 @@ function mainMenu()
             startGame();
         } elseif ($command == "--list") {
             listGames();
-        } elseif ($command == "--replay") {
-            replayGame();
+        } elseif (preg_match('/(^--replay [0-9]+$)/', $command) != 0) {
+            replayGame(explode(' ', $command)[1]);
         } else {
             \cli\line("Неверный ключ");
         }
@@ -109,14 +109,13 @@ function listGames()
     $db = openDatabase();
     $query = $db->query('SELECT * FROM gamesInfo');
     while ($row = $query->fetchArray()) {
-        echo "ID $row[0])\n    Дата:$row[1] $row[2]\n    Имя:$row[3]\n    Слово:$row[4]\n    Результат:$row[5]\n";
+        \cli\line("ID $row[0])\n    Дата:$row[1] $row[2]\n    Имя:$row[3]\n    Слово:$row[4]\n    Результат:$row[5]");
     }
 }
 
-function replayGame()
+function replayGame($id)
 {
     $db = openDatabase();
-    $id = \cli\prompt("Введите id игры");
     $idGame = $db->querySingle("SELECT EXISTS(SELECT 1 FROM gamesInfo WHERE idGame='$id')");
 
     if ($idGame == 1) {
