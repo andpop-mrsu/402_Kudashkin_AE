@@ -1,0 +1,26 @@
+{
+    "name": "fenix/hangman",
+    "authors": [
+        {
+            "name": "Aleksey Kudashkin",
+            "email": "aleksey1kudashkin@gmail.com"
+        }
+    ],
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11",
+        "gabordemooij/redbean": "^5.6"
+    },
+    "bin": [
+		"bin/hangman"
+	],
+	"autoload": {
+		"files": [
+			"src/Controller.php",
+            "src/View.php",
+            "src/Model.php"
+		]
+	},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5"
+    }
+}
