@@ -1,0 +1,19 @@
+{
+    "name": "fenix/task01",
+    "type": "project",
+    "authors": [{
+        "name": "AlekseyKudashkin",
+        "email": "57100724+AlekseyKudashkin@users.noreply.github.com"
+    }],
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/run-test"
+    ]
+}
