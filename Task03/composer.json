@@ -1,0 +1,25 @@
+{
+    "name": "aleksey/task03",
+    "type": "project",
+    "authors": [{
+        "name": "Aleksey Kudashkin",
+        "email": "aleksey1kudashkin@gmail.com"
+    }],
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": [
+                "src/Queue",
+                "src/Stack"
+            ]
+        },
+        "files": [
+            "src/index.php"
+        ]
+    },
+    "bin": [
+        "bin/run-test"
+    ]
+}
